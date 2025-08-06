@@ -15,7 +15,7 @@ pipeline {
       steps {
         script {
           sh '''
-            mvn -v
+            echo mvn -v
             mvn clean install -T 1C
           '''
         }
@@ -46,6 +46,14 @@ pipeline {
       steps {
         script {
           sh "docker push ${DOCKERHUB_IMAGE}"
+        }
+      }
+    }
+
+    stage('pulling back doc image') {
+      steps {
+        script {
+          sh "docker pull $DOCKERHUB_IMAGE"
         }
       }
     }
