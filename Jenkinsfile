@@ -35,7 +35,10 @@ pipeline {
 
     stage('Running docker image') {
       steps {
-        sh "docker run -d -p 8081:8080 --name hello-world-test hello-world"
+        sh '''
+        docker rm -f hello-world-test || true
+        docker run -d -p 8081:8080 --name hello-world-test hello-world
+        '''
       }
     }
     
