@@ -7,7 +7,7 @@ pipeline {
 
   environment {
     DOCKERHUB_CREDENTIALS= credentials('docker-hub-cred')
-    DOCKERHUB_IMAGE = 'samarthdoc123/image:hello-world'
+    DOCKERHUB_IMAGE = 'samarthdoc123/image:hello-world1'
   }
 
   stages {
