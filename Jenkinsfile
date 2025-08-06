@@ -45,7 +45,7 @@ pipeline {
     stage('Pushing to dockerhub registry') {
       steps {
         script {
-          sh "docker push ${DOCKERHUB_CREDENTIALS_USR}/${DOCKERHUB_IMAGE}"
+          sh "docker push ${DOCKERHUB_IMAGE}"
         }
       }
     }
